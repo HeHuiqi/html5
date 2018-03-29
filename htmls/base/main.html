@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var detailBtn = document.getElementById('detailBtn');
+            detailBtn.onclick = function () {
+                location.hash = 'detail';
+
+                $.get('detail.html',function (data) {
+                    console.log(data);
+                    var detailView = document.getElementById('content');
+                    detailView.innerHTML = data;
+                });
+
+            };
+
+            var btns = document.getElementsByClassName('beforeListBtn');
+            btns[0].onclick = function () {
+
+                var name_li = document.createElement('li');
+                var name = document.createTextNode('漂亮');
+                name_li.appendChild(name);
+
+                var praise_list = document.getElementById('praise_list');
+
+                //在某个元素之前插入一个元素
+                //insertBefore(new,before)
+
+                var li_1 = document.getElementById('li_1');
+                praise_list.insertBefore(name_li,li_1);
+
+
+                //替换一个元素
+                /*
+                var li_1 = document.getElementById('li_1');
+                praise_list.replaceChild(name_li,li_1);
+                */
+
+            };
+
+            $('.showListBtn').click(function () {
+
+                var name_li = document.createElement('li');
+                var name = document.createTextNode('美丽');
+                name_li.appendChild(name);
+
+                var praise_list = document.getElementById('praise_list');
+                //在最后插入，追加一个元素
+                praise_list.appendChild(name_li);
+
+
+                //在某个元素之前插入一个元素
+                //insertBefore(new,before)
+                /*
+                var li_1 = document.getElementById('li_1');
+                praise_list.insertBefore(name_li,li_1);
+                */
+
+                //替换一个元素
+                /*
+                var li_1 = document.getElementById('li_1');
+                praise_list.replaceChild(name_li,li_1);
+                */
+
+                //getElementsByClassName 返回一个数组，因为可能有多个元素的class属性值相同
+                var btns = document.getElementsByClassName('showListBtn');
+                btns[0].innerHTML = '插入了一个li元素';
+
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+<div id="container">
+
+    <button id="detailBtn">进入详情页</button>
+    <button class="showListBtn">插入一个赞扬名称</button>
+    <button class="showListBtn">在最后边插入一个赞扬名称</button>
+    <button class="beforeListBtn">在最前面插入一个赞扬名称</button>
+
+
+    <div id="content"></div>
+
+    <ol id="praise_list">
+        <li id="li_1">好的</li>
+        <li>可以</li>
+    </ol>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>正在载入...</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        body{
+            background-color: #FFFFFF;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        table{
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .info{
+            color: gray;
+        }
+        input{
+            font-family: Arial;
+            color: gray;
+            border-style: none;
+        }
+        #lines{
+            font-weight: bolder;
+            background-color: white;
+            padding: 0px;
+        }
+        #percent{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table cellpadding=0 cellspacing=0 >
+    <tr>
+        <form id="loading" >
+            <td align=center>
+                <p class="info">正在载入首页，请稍候.......</p>
+                <p>
+                    <input type='text' id="lines" size="46">
+                    <br/>
+                    <input type='text' id="percent" size="46">
+                    <script>
+                        var percent = 0;
+                        var line = "||";
+                        count()
+                        function count() {
+                            percent = percent + 2;
+                            line = line + "||";
+                            document.getElementById('lines').value = line;
+                            document.getElementById('percent').value = percent + "%"
+                            if (percent < 99) {
+                                setTimeout('count()', 100);
+                            }else {
+                                window.location = "http://";
+                            }
+                        }
+                    </script>
+                </p>
+            </td>
+        </form>
+    </tr>
+</table>
+</body>
+</html>

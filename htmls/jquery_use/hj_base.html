@@ -12,7 +12,8 @@
 
         /*基础语法： $(selector).action()
 
-        - 美元符号定义 jQuery
+        - 美元符号定义 jQuery $()等于jQuery()
+          即 $(selector).action()等价于 jQuery(selector).action()
         - 选择符（selector）"查询"和"查找" HTML 元素
         - jQuery 的 action() 执行对元素的操作
 
@@ -88,10 +89,6 @@
             $('#btn2').click(function () {
                 $('#content').slideToggle(500);
             });
-
-
-
-
         });
 
     </script>
@@ -121,9 +118,6 @@
     <p id="content">详情内容</p>
 
     <p id="bottom">底部导航</p>
-
-
-
 
 </div>
 
