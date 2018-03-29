@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery初试</title>
+
+    <!--<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>-->
+
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        /*基础语法： $(selector).action()
+
+        - 美元符号定义 jQuery
+        - 选择符（selector）"查询"和"查找" HTML 元素
+        - jQuery 的 action() 执行对元素的操作
+
+        */
+
+      /*
+        这两种写法相同，相关操作要写在了里面
+        $(function () {
+
+        });
+
+        $(document).ready(function () {
+
+        });
+        */
+
+        console.log('$=='+$);
+        $(document).ready(function(){
+            console.log('ready');
+
+            $('p').click(function () {
+                $(this).hide();
+            });
+
+            $('p.hide1').click(function () {
+                $(this).hide();
+            });
+
+            $('p#hide2').click(function () {
+                $(this).hide();
+            });
+
+        });
+
+        $(function () {
+
+            $('#btn').click(function () {
+
+                /*
+                $(selector).hide(speed,callback);
+
+                $(selector).show(speed,callback);
+                可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+
+                */
+
+                var biaoti = $('h2');
+                if (biaoti.is(":hidden")){
+
+                    biaoti.show('fast');
+                    //改变文本
+                    $(this).text('点击隐藏标题2');
+                    //改变样式
+                    $('p.hide1').css('background-color','#efaf15');
+
+                }else {
+
+                    $(this).text('点击显示标题2');
+                    biaoti.hide('slow');
+                    $('p.hide1').css('background-color','#ffcfef');
+                }
+
+
+            });
+
+
+            //双击事件
+            $('#btn1').dblclick(function () {
+                $(this).hide();
+            });
+
+            //显示/隐藏
+            $('#btn2').click(function () {
+                $('#content').slideToggle(500);
+            });
+
+
+
+
+        });
+
+    </script>
+
+    <style type="text/css">
+        #content{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div>
+
+    <h2>标题2</h2>
+    <p>点我消失0</p>
+    <p class="hide1">点我就消失1</p>
+    <p id="hide2">点我就消失2</p>
+    <button id="btn">点击隐藏标题2</button>
+
+    <button id="btn1">双击隐藏我</button>
+
+    <button id="btn2">点击隐藏/显示详情</button>
+    <br/>
+    <p id="content">详情内容</p>
+
+    <p id="bottom">底部导航</p>
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

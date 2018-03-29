@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的公司</title>
+    <!--[if IE]>
+    <script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+     < ![endif]-->
+
+    <style type="text/css">
+
+
+        body,ul,header,article,h1{
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+
+        article,aside,dialog,footer,header,section,footer,nav,figure,menu,ul,ol{
+            display:block;
+            list-style:none;
+
+
+        }
+        header,footer{
+            width: 100%;
+        }
+
+        nav{
+            width: 38%;
+            float: left;
+        }
+        article{
+            float: right;
+            width: 62%;
+        }
+        footer{
+            clear: left;
+            clear: right;
+        }
+    </style>
+    <script>
+        function sport_detail(){
+            window.location.href = 'sport.html';
+        }
+    </script>
+</head>
+<body>
+<header style="background: red">
+    <h1 onclick="sport_detail()">我的公司</h1>
+</header>
+<nav>
+    <ul id="" style="background: aquamarine">
+        <li>首页</li>
+        <li>产品</li>
+        <li>服务</li>
+        <li>关于我们</li>
+    </ul>
+</nav>
+<article style="background: bisque">
+    <p>我的公司是一家国际性的大公司，为世界各个行业提供各种产品和服务，小到锅碗瓢盆，大到航天飞机、火箭、卫星！</p>
+</article>
+<footer style="background: gold">版权所有@2030 www.hhq.com</footer>
+</body>
+</html>

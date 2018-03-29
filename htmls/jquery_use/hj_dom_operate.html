@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryDOM操作</title>
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+
+
+    <script type="text/javascript">
+        /*
+        获得内容
+        三个简单实用的用于 DOM 操作的 jQuery 方法：
+        text() - 设置或返回所选元素的文本内容
+        html() - 设置或返回所选元素的内容（包括 HTML 标记）
+        val() - 设置或返回表单字段的值
+        */
+
+        $(document).ready(function () {
+            
+            $('.btn').click(function () {
+
+                /*
+                添加新的 HTML 内容（文本或者html元素）
+                append() - 在被选元素的结尾插入内容
+                prepend() - 在被选元素的开头插入内容
+                after() - 在被选元素之后插入内容
+                before() - 在被选元素之前插入内容
+                */
+
+
+
+                //前边补充内容
+                $('#msg1').prepend('老刘问到：');
+
+                //后边追加内容
+                $('#msg').append(':今天的工作都做完了');
+
+                $('#msg').after('<h1>工作列表<h1>');
+
+
+                /*
+                删除元素/内容
+                remove() - 删除被选元素（及其子元素）
+                empty() - 从被选元素中删除子元素
+                remove() 方法也可接受一个参数，允许您对被删元素进行过滤（删除指定元素）。
+                例如：$("p").remove(".italic");表示删除class属性为italic的元素
+
+                */
+                //$('.msg2').remove();
+                $('.content').remove();
+                //$('.content').empty();
+
+
+
+            });
+
+            $('.btn1').click(function () {
+                var txt = $('p').text();
+                alert(txt);
+            });
+
+            $('.btn2').click(function () {
+                var txt = $('p').html();
+                alert(txt);
+            });
+
+            /*
+            jQuery 方法：text()、html() 以及 val()，
+            同样拥有回调函数。
+            回调函数有两个参数：
+            被选元素列表中当前元素的下标，以及原始（旧的）值。
+            然后以函数新值返回您希望使用的字符串。
+            */
+            $('.btn3').click(function () {
+
+               /* var txt = $('p').text('您的消息已经读取');*/
+
+                $('p').text(function (i,originalText) {
+                    alert(originalText);
+
+                    var  newText = '您的消息已经读取';
+                    alert(newText);
+                    return newText;
+                });
+            });
+            
+            $('.btn4').click(function () {
+                var txt = $('.name').val();
+                alert(txt);
+            });
+            $('.btn5').click(function () {
+                var txt = $('.name').attr('class');
+                alert("form表单的class属性是："+txt);
+
+            });
+
+        });
+        
+    </script>
+    <style type="text/css">
+        button,input{
+            outline: none;
+            width: auto;
+        }
+
+        button,input{
+            height: 44pt;
+        }
+        input{
+            height: 50pt;
+        }
+        .h_strong{
+         font-size: 40pt;
+        }
+        .content{
+            width: auto;
+            height: 200pt;
+            background-color: #3a6cf6;
+        }
+
+    </style>
+</head>
+<body>
+
+<p>您有一条<b class="h_strong">新的</b>消息</p>
+<form>
+    姓名：<input class="name" type="text" placeholder="输入姓名"/>
+</form>
+<br/>
+
+
+<p id="msg1">您吃饭了吗？</p>
+<p id="msg">消息详情</p>
+
+<p class="msg2">消息详情1</p>
+<div class="content">
+    新闻区
+    <h3>重大新闻</h3>
+    <p>人类将不在需要Money</p>
+</div>
+
+
+<button class="btn">测试</button>
+
+<button class="btn1">显示内容</button>
+<button class="btn2">显示html标签和内容</button>
+<button class="btn3">改变内容</button>
+<button class="btn4">显示form表单值</button>
+<button class="btn5">获取属性值</button>
+
+
+
+</body>
+</html>

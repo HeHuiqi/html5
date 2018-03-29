@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unicode转码</title>
+    <script type="text/javascript">
+
+        function transformZhCN()
+        {
+            var  content = document.getElementById("unicodeText").value.toLowerCase();
+            content = eval("'" + content + "'");
+            document.getElementById("zhText").value= content;
+        }
+
+        function transformUnicode()
+        {
+
+           var content = document.getElementById("zhText").value.toLowerCase();
+
+            content = tounicode(content);
+            document.getElementById("unicodeText").value= content;
+        }
+
+        function tounicode(data)
+        {
+            if(data == '') return '请输入汉字';
+            var str ='';
+            for(var i=0;i<data.length;i++)
+            {
+                var temp = parseInt(data[i].charCodeAt(0),10)
+                console.log('temp=='+temp);
+                if (temp>2000){
+                    str+="\\U"+temp.toString(16);
+
+                }else {
+                    str+=""+data[i];
+
+                }
+            }
+            return str;
+        }
+
+    </script>
+
+    <style type="text/css">
+
+        #transform{margin-left: auto; margin-right: auto;width:50%;}
+
+        #unicodeText,#zhText{ width: 100%; height: 200px; margin-left:auto; margin-right:auto; font-size: large;}
+
+        button{font-size: large;margin-top: 20px;}
+
+        p{font-size: large;}
+
+    </style>
+
+
+</head>
+<body>
+
+<div id="transform">
+    <p>Unicode文本</p>
+    <textarea id="unicodeText" placeholder="请输入Unicode码">1990\U5e741\U670812\U65e5</textarea>
+    <button onclick="transformZhCN()">Unicode转中文</button>
+    <button onclick="transformUnicode()">中文转Unicode</button>
+    <p>中文文本</p>
+    <textarea id="zhText" placeholder="中文编码">1990年1月12日</textarea>
+</div>
+
+</body>
+</html>

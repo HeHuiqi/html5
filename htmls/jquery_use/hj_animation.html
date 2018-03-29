@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jquery动画</title>
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#testBtn').click(function () {
+                console.log('animation1');
+/*
+语法：
+$(selector).animate({params},speed,callback);
+必需的 params 参数定义形成动画的 CSS 属性。
+
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+
+可选的 callback 参数是动画完成后所执行的函数名称。
+
+注意:
+默认情况下，所有 HTML 元素都有一个静态位置，且无法移动。
+如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！
+
+
+操作CSS 属性
+需要记住一件重要的事情：当使用 animate() 时，
+必须使用 Camel 标记法(驼峰命名法)书写所有的属性名，
+比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。
+
+同时，色彩动画并不包含在核心 jQuery 库中
+*/
+                $(".animation1").animate({
+                    left:'250px',
+                    opacity:'0.5',
+                    height:'250px',
+                    width:'250px'
+                });
+
+            });
+        });
+    </script>
+    <style type="text/css">
+        #testBtn{
+            width: auto;
+            height: 45pt;
+            outline: none;
+        }
+        .animation1{
+            margin-top: 10px;
+            width: 100pt;
+            height: 100pt;
+            background-color: #3a6cf6;
+            position: absolute;<!-- 设置此属性才能执行位置动画 -->
+        }
+
+    </style>
+</head>
+
+<body>
+
+<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。
+    如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<button id="testBtn">开始动画</button>
+
+<div class="animation1">动起来</div>
+
+
+</body>
+</html>

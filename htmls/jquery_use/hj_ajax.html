@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryAJAX的使用</title>
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.loadBtn').click(function () {
+
+                /*
+                jQuery load() 方法
+
+                load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+                但是这个方法会覆盖原有内容
+                语法：
+                $(selector).load(URL,data,callback);
+                必需的 URL 参数规定您希望加载的 URL。
+                可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+                可选的 callback 参数是 load() 方法完成后所执行的函数名称。
+                
+                回调函数可以设置不同的参数：
+                responseTxt - 包含调用成功时的结果内容
+                statusTXT - 包含调用的状态
+                xhr - 包含 XMLHttpRequest 对象
+
+                */
+                //$('h1').load('./hj_ajax_txt');
+                $('h1').load('./hj_ajax_txt',function (responseTxt,statusTxt,xhr) {
+
+                    if (statusTxt == 'success'){
+                        alert('加载成功:'+responseTxt);
+                    }
+                    if (statusTxt == 'error'){
+                        alert('加载错误：'+xhr.status+':'+xhr.statusText);
+                    }
+
+                });
+                
+            });
+            /*
+            * $.get() 方法通过 HTTP GET 请求从服务器上请求数据。
+            * $.get(URL,callback);
+            * */
+
+            $('.getBtn').click(function () {
+                $.get('./hj_ajax_txt',function (rspTxt,status,xhr) {
+                    alert('content:'+rspTxt+'\n status=='+status+'\nxhr='+xhr.status);
+                });
+            });
+
+            /*
+            $.post(URL,data,callback);
+            必需的 URL 参数规定您希望请求的 URL。
+            可选的 data 请求参数参数规定连同请求发送的数据。
+            可选的 callback 参数是请求成功后所执行的函数名
+            */
+
+            $('.postBtn').click(function () {
+
+                $.post('./hj_ajax_post_txt',
+                    {dataId:'1234590',dataType:1},
+                    function (data,status,xhr) {
+                    alert('content='+data);
+                });
+            });
+
+            /*
+            $.ajax({name:value, name:value, ... })
+
+            */
+
+            $('.ajaxPostBtn').click(function () {
+                $.ajax({
+                    url:'./hj_ajax_post_txt',
+                    data:{dataId:'1234590',dataType:1},
+                    type:'POST',
+                    async:true,
+                    headers:{token:'h_token12344',time:'20180328'},
+                    success:function (result) {
+                        alert('result=='+result);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h1></h1>
+<h6></h6>
+<button class="loadBtn">从文件中加载文本到元素</button>
+<button class="getBtn">get请求内容</button>
+<button class="postBtn">post请求内容</button>
+<button class="ajaxPostBtn">ajax_post请求内容</button>
+
+
+
+</body>
+</html>

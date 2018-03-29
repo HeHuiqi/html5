@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryCSS样式操作</title>
+    <script src="../../libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        /*
+        jQuery 操作 CSS
+        addClass() - 向被选元素添加一个或多个类
+        removeClass() - 从被选元素删除一个或多个类
+        toggleClass() - 对被选元素进行添加/删除类的切换操作
+        css() - 设置或返回样式属性
+        */
+        
+         $(function () {
+             $('.btn0').click(function () {
+
+                 $("p").addClass('p_bg_color');
+             });
+             $('.btn1').click(function () {
+                 //$('.study_content').css('color','red');
+
+                 //改变多个属性值
+                 //css({"propertyname":"value","propertyname":"value",...});
+                 $('.study_content').css({
+                     color:'red',
+                     backgroundColor:'green'
+                 });
+             });
+
+             /*
+             jQuery 尺寸方法
+             width()方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+             height()方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+             innerWidth()方法返回元素的宽度（包括内边距）.
+             innerHeight()方法返回元素的高度（包括内边距）
+             outerWidth()方法返回元素的宽度（包括内边距和边框）。
+             outerHeight()方法返回元素的高度（包括内边距和边框）
+             */
+
+             $('.btn2').click(function () {
+                 var p_width = $('.study_content').width();
+                 alert('元素的宽度为：'+p_width);
+
+             });
+         });
+
+    </script>
+    <style type="text/css">
+        .p_bg_color{
+            background-color: brown;
+            color:white;
+        }
+        .study_content{
+            font-size: 40pt;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div>
+    <p>欢迎来到会奇课堂</p>
+    <p class="study_content">今天讲解的内容。。。。。</p>
+    <button class="btn0">添加css改变文字颜色和背景色</button>
+    <button class="btn1">直接改变已存在css属性的值</button>
+    <button class="btn2">获取元素的尺寸</button>
+    
+
+</div>
+
+</body>
+</html>
