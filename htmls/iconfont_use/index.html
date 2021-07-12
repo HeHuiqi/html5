@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font</title>
+    <!-- 引入 iconfont.css -->
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <!-- 引入 iconfont.js -->
+    <script src="./iconfont/iconfont.js"></script>
+    <!--  -->
+    <style>
+        .icon-write:before {
+            content: "\e616";
+        }
+        /* 这里东放在了iconfont.css中 */
+        /*
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        */
+    </style>
+
+</head>
+
+<body>
+    <div>
+
+        <p>
+            <i class="iconfont icon-write"></i>写文章
+        </p>
+
+        <p>
+            <span class="iconfont">&#xe616;</span>写文章
+        </p>
+        <p>
+            <svg class="icon">
+                <use xlink:href="#icon-yumaobi"></use>
+            </svg> 写文章
+        </p>
+
+    </div>
+
+</body>
+
+</html>

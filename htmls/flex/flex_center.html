@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /* 这里很关键 */
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #out {
+            background: orange;
+            height: 300px;
+            /*水平居中*/
+            width: 500px;
+            margin: 0 auto;
+            top: 50%;
+            /*偏移*/
+            margin-top: -150px;
+            position: relative;
+            display: flex;
+        }
+        
+        #in {
+            background-color: royalblue;
+            height: 50%;
+            /* 在固定宽度时，配合margin为auto来达到水平居中 */
+            width: 50%;
+            margin: 0 auto;
+            /* 配合 parent node 的 display:flex 属性，垂直居中 */
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="out">
+        <div id="in"></div>
+    </div>
+
+</body>
+
+</html>

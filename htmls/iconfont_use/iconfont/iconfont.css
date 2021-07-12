@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id 2667819 */
+    src: url('iconfont.woff2?t=1626074646595') format('woff2'), url('iconfont.woff?t=1626074646595') format('woff'), url('iconfont.ttf?t=1626074646595') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.icon-yumaobi1:before {
+    content: "\e775";
+}
+
+.icon-yumaobi2:before {
+    content: "\e611";
+}
+
+.icon-yumaobi3:before {
+    content: "\e60b";
+}
+
+.icon-yumaobi:before {
+    content: "\e616";
+}
+
+.icon-write:before {
+    content: "\e605";
+}

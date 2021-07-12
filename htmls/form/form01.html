@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place</title>
+    <style>
+        .search {
+            width: 30%;
+            margin: auto;
+        }
+        
+        button,
+        input,
+        select,
+        textarea {
+            outline: 0;
+            font-size: 16px;
+        }
+        
+        .search input {
+            line-height: 34px;
+            left: 9px;
+            top: 0;
+            text-align: initial;
+            white-space: nowrap;
+            right: 9px;
+            height: 35px;
+            width: 94%;
+            padding: 0 3% 0 3%;
+            background-color: #fff;
+            border: 1px solid #c8c8c8;
+            border-radius: 3px;
+            color: #585c89;
+            font-weight: 400;
+        }
+        /* 修改placeholder的默认颜色： */
+        
+        input::-webkit-input-placeholder {
+            color: #585c89;
+        }
+        
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #585c89;
+        }
+        
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #585c89;
+        }
+        
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #585c89;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <form action="">
+            <input type="text" placeholder="搜索.....">
+        </form>
+    </div>
+</body>
+
+</html>

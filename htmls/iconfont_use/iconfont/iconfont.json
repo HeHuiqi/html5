@@ -1,0 +1,43 @@
+{
+    "id": "2667819",
+    "name": "q_font",
+    "font_family": "iconfont",
+    "css_prefix_text": "icon-",
+    "description": "",
+    "glyphs": [{
+            "icon_id": "3144992",
+            "name": "羽毛笔",
+            "font_class": "yumaobi1",
+            "unicode": "e775",
+            "unicode_decimal": 59253
+        },
+        {
+            "icon_id": "11533118",
+            "name": "羽毛笔",
+            "font_class": "yumaobi2",
+            "unicode": "e611",
+            "unicode_decimal": 58897
+        },
+        {
+            "icon_id": "18798149",
+            "name": "羽毛笔",
+            "font_class": "yumaobi3",
+            "unicode": "e60b",
+            "unicode_decimal": 58891
+        },
+        {
+            "icon_id": "6827471",
+            "name": "羽毛笔",
+            "font_class": "yumaobi",
+            "unicode": "e616",
+            "unicode_decimal": 58902
+        },
+        {
+            "icon_id": "15690676",
+            "name": "书写",
+            "font_class": "write",
+            "unicode": "e605",
+            "unicode_decimal": 58885
+        }
+    ]
+}
