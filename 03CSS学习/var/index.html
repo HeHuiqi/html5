@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS变量</title>
+    <style>
+        /* 变量必须使用 -- 开头 */
+        
+         :root {
+            /* 全局变量 */
+            --blue: #1e90ff;
+            --red: lightblue;
+        }
+        
+        h1 {
+            /* 局部变量 */
+            --blue: lightblue;
+            background-color: var(--blue);
+        }
+        
+        p {
+            background-color: var(--blue);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>标题</h1>
+    <p>内容</p>
+
+</body>
+
+</html>

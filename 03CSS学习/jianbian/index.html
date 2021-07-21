@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简便</title>
+    <style>
+        h1 {
+            text-shadow: 2px 2px;
+        }
+        
+        p {
+            background-color: rgb(162, 167, 184);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            height: 150px;
+        }
+        
+        #grad1 {
+            height: 200px;
+            /* background-color: red; */
+            /* background-image: linear-gradient(red, yellow); */
+            /* background-image: linear-gradient( to right, red, yellow); */
+            background-image: linear-gradient( to left, red, yellow);
+            /* background-image: linear-gradient(to bottom right, red, yellow); */
+            /* background-image: linear-gradient(-90deg, red, yellow); */
+            /* background-image: linear-gradient(red, yellow, green); */
+            /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>线性渐变 - 从上到下</h1>
+    <p>此线性渐变从顶部开始为红色，然后在底部过渡为黄色：</p>
+
+    <div id="grad1"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #content {
+            background-color: #f1f1f1;
+        }
+        
+        .row {
+            padding: 10px 0 12px 0;
+            background-color: lightsteelblue;
+            border-bottom: 1px solid red;
+            height: 100px;
+        }
+        
+        .icon {
+            margin-left: 10px;
+            margin-right: 10px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        
+        .content_item {
+            background-color: burlywood;
+            padding-top: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .content_item>p {
+            height: 40px;
+            margin-right: 10px;
+            overflow: hidden;
+            /* white-space: nowrap; */
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            word-break: break-all;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+        
+        .row:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .footer {
+            background-color: royalblue;
+        }
+        
+        .footer h3 {
+            padding: 15px 10px 15px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content">
+        <div class="row">
+            <div class="icon">
+                <p>图片信息</p>
+            </div>
+            <div class="content_item">
+                <h3>为什么大家总觉得张大仙很菜?</h3>
+                <p>癞蛤蟆玩的花： 因为换人了。 你们真的没发现吗？ 真正的张大仙是月下无限连的首创人，是指法猴子的先驱，英雄池之深，任何职业选手都望而却步。 凭借帅气的外表，独具特色的声线，幽默的解说，一心二用的多频次互动，秀</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="icon">
+                <p>图片信息</p>
+            </div>
+            <div class="content_item">
+                <h3>为什么大家总觉得张大仙很菜?</h3>
+                <p>癞蛤蟆玩的花： 因为换人了。 你们真的没发现吗？ 真正的张大仙是月下无限连的首创人，是指法猴子的先驱，英雄池之深，任何职业选手都望而却步。 凭借帅气的外表，独具特色的声线，幽默的解说，一心二用的多频次互动，秀</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="icon">
+                <p>图片信息</p>
+            </div>
+            <div class="content_item">
+                <h3>为什么大家总觉得张大仙很菜?</h3>
+                <p>癞蛤蟆玩的花： 因为换人了。 你们真的没发现吗？ 真正的张大仙是月下无限连的首创人，是指法猴子的先驱，英雄池之深，任何职业选手都望而却步。 凭借帅气的外表，独具特色的声线，幽默的解说，一心二用的多频次互动，秀</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h3>footer</h3>
+    </div>
+
+</body>
+
+</html>

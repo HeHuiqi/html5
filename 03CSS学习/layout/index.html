@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>简单网站布局</title>
+    <style>
+        /* 
+        后代选择器 (空格) 所有后代，包括后代的后代
+        子选择器 (>),直接后代，不包括后代的后代
+        相邻兄弟选择器 (+)，紧挨着的，结束标签的第一个元素
+        通用兄弟选择器 (~) 所有的相邻运算
+         */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .header,
+        .footer {
+            background-color: grey;
+            color: white;
+            padding: 15px;
+        }
+        
+        .column {
+            float: left;
+            padding: 15px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .menu {
+            width: 25%;
+        }
+        
+        .content {
+            width: 75%;
+        }
+        
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu li {
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: #33b5e5;
+            color: #ffffff;
+        }
+        
+        .menu li:hover {
+            background-color: #0099cc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Shanghai</h1>
+    </div>
+
+    <div class="clearfix">
+        <div class="column menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+
+        <div class="column content">
+            <h1>The City</h1>
+            <p>Shanghai is one of the four direct-administered municipalities of the People's Republic of China. Welcome to Shanghai!
+            </p>
+            <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Footer Text</p>
+    </div>
+
+</body>
+
+</html>

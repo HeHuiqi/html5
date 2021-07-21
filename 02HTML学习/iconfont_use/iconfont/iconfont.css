@@ -2,6 +2,7 @@
     font-family: "iconfont";
     /* Project id 2667819 */
     src: url('iconfont.woff2?t=1626074646595') format('woff2'), url('iconfont.woff?t=1626074646595') format('woff'), url('iconfont.ttf?t=1626074646595') format('truetype');
+    /* src: url('iconfont-jianshu.ttf') format('truetype'); */
 }
 
 .iconfont {
@@ -38,4 +39,8 @@
 
 .icon-write:before {
     content: "\e605";
+}
+
+.ic-icon_chats:before {
+    content: "\E68E"
 }

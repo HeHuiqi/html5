@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        #e {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+            zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="e"></div>
+    <script>
+        var e = document.getElementById("e");
+        var flag = true;
+        var left = 0;
+        //当前执行时间
+        var nowTime = 0;
+        //记录每次动画执行结束的时间
+        var lastTime = Date.now();
+        lastTime = 0;
+        //我们自己定义的动画时间差值
+        var diffTime = 10;
+
+        function render() {
+            if (flag == true) {
+                if (left >= 100) {
+                    flag = false
+                }
+                e.style.left = ` ${left++}px`
+            } else {
+                if (left <= 0) {
+                    flag = true
+                }
+                e.style.left = ` ${left--}px`
+            }
+        }
+
+        //requestAnimationFrame效果
+        (function animloop(timestamp) {
+            //记录当前时间
+            // nowTime = Date.now()
+            // 当前时间-上次执行时间如果大于diffTime，那么执行动画，并更新上次执行时间
+            if (timestamp - lastTime > diffTime) {
+                lastTime = timestamp;
+                render();
+            }
+            // requestAnimationFrame 会给回调方法第一个传入一个与第一次调用时的时间差
+            requestAnimationFrame(animloop);
+
+        })()
+
+        //setInterval效果
+        // setInterval(function() {
+        //     //记录当前时间
+        //     nowTime = Date.now()
+        //         // 当前时间-上次执行时间如果大于diffTime，那么执行动画，并更新上次执行时间
+        //     if (nowTime - lastTime > diffTime) {
+        //         lastTime = nowTime
+        //         render();
+        //     }
+        // }, 1000 / 60)
+    </script>
+</body>
+
+</html>

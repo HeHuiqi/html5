@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            /* 
+            去除(合并)表格间距
+            border-collapse 属性设置是否将表格边框折叠为单一边框：
+             */
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #customers td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table id="customers">
+            <!-- 行 -->
+            <tr>
+                <!-- 表头 -->
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>职业</th>
+            </tr>
+            <tr>
+                <!-- 表单元格 -->
+                <td>韩梅梅</td>
+                <td>18</td>
+                <td>高中生</td>
+            </tr>
+            <tr>
+                <td>李雷</td>
+                <td>19</td>
+                <td>高中生</td>
+            </tr>
+
+            <tr>
+                <td>赵云</td>
+                <td>19</td>
+                <td>高中生</td>
+            </tr>
+            <tr>
+                <td>妲己</td>
+                <td>19</td>
+                <td>高中生</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+</body>
+
+</html>

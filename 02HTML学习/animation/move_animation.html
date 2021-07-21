@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="position: absolute;background: blue;width: 100px;height: 100px;left: 0;" id="div"></div>
+    <script>
+        // https://www.cnblogs.com/zhenfei-jiang/p/9115619.html
+        /** 运动算法
+         * t:动画已经消耗的时间
+         * b:小球初始位置
+         * c:小球的目标位置
+         * d:动画持续的总时间
+         * */
+        var tween = {
+            strongEaseOut: function(t, b, c, d) {
+                return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+            },
+            linear: function(t, b, c, d) {
+                return c * t / d + b;
+            }
+        }
+        var Animate = function(dom) {
+            this.dom = dom;
+            this.startTime = 0;
+            this.startPos = 0;
+            this.endPos = 0;
+            this.propertyName = null;
+            this.easing = null;
+            this.duration = null;
+        }
+        Animate.prototype.start = function(propertyName, endPos, duration, easing) {
+            this.startTime = +new Date; //记录现在的开始时间
+            this.startPos = this.dom.getBoundingClientRect()[propertyName]; //记录开始的位置
+            this.propertyName = propertyName; //需要改变的属性（传）
+            this.endPos = endPos; //得到目标位置（传）
+            this.duration = duration; //得到需要的时间（传）
+            this.easing = tween[easing] //选择哪种运动的算法（传）
+            var self = this;
+            var timeId = setInterval(function() {
+                //如果self返回false，则取消定时器
+                if (self.step() === false) {
+                    clearInterval(timeId)
+                }
+            }, 19)
+        }
+        Animate.prototype.step = function() {
+                //目前的时间
+                var t = +new Date;
+                //如果时间超过开始时间和需要时间之和，则矫正目前的位置为目标位置
+                if (t >= this.startTime + this.duration) {
+                    this.update(this.endPos)
+                    return false; //返回false为了取消定时器
+                }
+                var pos = this.easing(t - this.startTime, this.startPos, this.endPos - this.startPos, this.duration)
+                this.update(pos)
+            }
+            //更新当前位置
+        Animate.prototype.update = function(pos) {
+            this.dom.style[this.propertyName] = pos + 'px'
+        }
+
+        var div = document.getElementById('div')
+        var animate = new Animate(div)
+
+        animate.start('left', 500, 5000, 'linear')
+            // animate.start('left', 500, 5000, 'strongEaseOut');
+    </script>
+</body>
+
+</html>
