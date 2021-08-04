@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JqueryAJAX的使用</title>
-    <script src="../../libs/jquery-3.3.1.min.js"></script>
+    <script src="../../libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
-        $(function () {
-            $('.loadBtn').click(function () {
+        $(function() {
+            $('.loadBtn').click(function() {
 
                 /*
                 jQuery load() 方法
@@ -26,26 +27,26 @@
 
                 */
                 //$('h1').load('./hj_ajax_txt');
-                $('h1').load('./hj_ajax_txt',function (responseTxt,statusTxt,xhr) {
+                $('h1').load('./hj_ajax_txt', function(responseTxt, statusTxt, xhr) {
 
-                    if (statusTxt == 'success'){
-                        alert('加载成功:'+responseTxt);
+                    if (statusTxt == 'success') {
+                        alert('加载成功:' + responseTxt);
                     }
-                    if (statusTxt == 'error'){
-                        alert('加载错误：'+xhr.status+':'+xhr.statusText);
+                    if (statusTxt == 'error') {
+                        alert('加载错误：' + xhr.status + ':' + xhr.statusText);
                     }
 
                 });
-                
+
             });
             /*
-            * $.get() 方法通过 HTTP GET 请求从服务器上请求数据。
-            * $.get(URL,callback);
-            * */
+             * $.get() 方法通过 HTTP GET 请求从服务器上请求数据。
+             * $.get(URL,callback);
+             * */
 
-            $('.getBtn').click(function () {
-                $.get('./hj_ajax_txt',function (rspTxt,status,xhr) {
-                    alert('content:'+rspTxt+'\n status=='+status+'\nxhr='+xhr.status);
+            $('.getBtn').click(function() {
+                $.get('./hj_ajax_txt', function(rspTxt, status, xhr) {
+                    alert('content:' + rspTxt + '\n status==' + status + '\nxhr=' + xhr.status);
                 });
             });
 
@@ -56,13 +57,15 @@
             可选的 callback 参数是请求成功后所执行的函数名
             */
 
-            $('.postBtn').click(function () {
+            $('.postBtn').click(function() {
 
-                $.post('./hj_ajax_post_txt',
-                    {dataId:'1234590',dataType:1},
-                    function (data,status,xhr) {
-                    alert('content='+data);
-                });
+                $.post('./hj_ajax_post_txt', {
+                        dataId: '1234590',
+                        dataType: 1
+                    },
+                    function(data, status, xhr) {
+                        alert('content=' + data);
+                    });
             });
 
             /*
@@ -70,31 +73,39 @@
 
             */
 
-            $('.ajaxPostBtn').click(function () {
+            $('.ajaxPostBtn').click(function() {
                 $.ajax({
-                    url:'./hj_ajax_post_txt',
-                    data:{dataId:'1234590',dataType:1},
-                    type:'POST',
-                    async:true,
-                    headers:{token:'h_token12344',time:'20180328'},
-                    success:function (result) {
-                        alert('result=='+result);
+                    url: './hj_ajax_post_txt',
+                    data: {
+                        dataId: '1234590',
+                        dataType: 1
+                    },
+                    type: 'POST',
+                    async: true,
+                    headers: {
+                        token: 'h_token12344',
+                        time: '20180328'
+                    },
+                    success: function(result) {
+                        alert('result==' + result);
                     }
                 });
             });
         });
     </script>
 </head>
+
 <body>
 
-<h1></h1>
-<h6></h6>
-<button class="loadBtn">从文件中加载文本到元素</button>
-<button class="getBtn">get请求内容</button>
-<button class="postBtn">post请求内容</button>
-<button class="ajaxPostBtn">ajax_post请求内容</button>
+    <h1></h1>
+    <h6></h6>
+    <button class="loadBtn">从文件中加载文本到元素</button>
+    <button class="getBtn">get请求内容</button>
+    <button class="postBtn">post请求内容</button>
+    <button class="ajaxPostBtn">ajax_post请求内容</button>
 
 
 
 </body>
+
 </html>

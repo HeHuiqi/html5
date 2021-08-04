@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexNav</title>
+    <style>
+        .header {
+            display: flex;
+            background-color: teal;
+            align-items: center;
+            min-width: 1100px;
+            margin: auto;
+        }
+        
+        .nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .nav-item a {
+            display: inline-block;
+            color: white;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        
+        .nav-item a:hover {
+            background-color: black;
+        }
+        
+        .nav-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .header-search-from {
+            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-search-bar {
+            display: flex;
+            padding: 5px 15px;
+            background-color: #f6f6f6;
+            align-items: center;
+            border-radius: 20px;
+            border: 1px solid rgb(235, 235, 235);
+        }
+        
+        .header-search-bar .search-input {
+            width: 300px;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            background-color: #f6f6f6;
+        }
+        
+        .header-search-bar .search-btn {
+            margin-left: 10px;
+            outline: none;
+            border: none;
+            width: 40px;
+            font-size: 14px;
+            color: white;
+            border-radius: 10px;
+            background-color: #06f;
+        }
+        
+        .nav-logo a {
+            margin-left: 20px;
+            margin-right: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-item-message {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul class="nav">
+            <li class="nav-logo">
+                <a href="">logo</a>
+            </li>
+            <li class="nav-item">
+                <a href="">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="">会员</a>
+            </li>
+            <li class="nav-item">
+                <a href="">发现</a>
+            </li>
+            <li class="nav-item">
+                <a href="">等你来答</a>
+            </li>
+        </ul>
+        <div class="nav-center">
+            <form class="header-search-from" action="">
+                <div class="header-search-bar">
+                    <input class="search-input" type="text" placeholder="搜索...." name="" id="">
+                    <input class="search-btn" type="button" value="搜">
+                </div>
+            </form>
+        </div>
+        <div class="nav-item nav-item-message">
+            <a href="">消息</a>
+            <a href="">通知</a>
+            <a href="">个人中心</a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

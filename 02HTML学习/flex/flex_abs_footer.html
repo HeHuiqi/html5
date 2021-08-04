@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex abs footer</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .Site {
+            display: flex;
+            min-height: 100vh;
+            /* justify-content: space-around; */
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: yellowgreen;
+        }
+        
+        footer {
+            background-color: yellow;
+        }
+        
+        .Site-content {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body class="Site">
+    <header>header</header>
+    <main class="Site-content">Site-content</main>
+    <footer>footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax请求</title>
+    <script src="./HqHttpClient.js"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <button id="btn">GET</button>
+        <div id="content">
+
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', (e) => {
+            getArticleDetail();
+        });
+        /*
+        await 必须在 async 修饰的函数中使用
+        await 必须在async函数的上下文中
+        async 是一个修饰符，async 定义的函数会默认的返回一个Promise对象resolve的值，
+        因此对async函数可以直接进行then操作,返回的值即为then方法的传入函数
+        */
+        //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        async function getJSON(url) {
+            try {
+                let response = await fetch(url);
+                return await response.json();
+            } catch (error) {
+                console.log('Request Failed', error);
+            }
+        }
+
+        async function getArticleDetail() {
+            const api = 'https://api.lcyoufu.com/v3';
+            const url = `${api}/article/profile`;
+            const uri = `${url}?articleid=1456507`;
+            const content = document.getElementById('content');
+
+            /*
+            const http = new HqHttpClient();
+            http.headers = {
+                'token': '123'
+            };
+            http.params = {
+                'articleid': 1456507
+            };
+            http.GET(url, function(code, resp) {
+                console.log(code);
+                console.log(JSON.parse(resp));
+                content.innerHTML = resp;
+            });
+            */
+
+            fetch(uri, {
+                    method: 'get',
+                })
+                .then((resp) => {
+                    return resp.text();
+                    // return resp.json();
+
+                })
+                .then((txt) => {
+                    console.log(JSON.parse(txt));
+                    content.innerHTML = txt;
+                })
+                .catch((error) => {
+
+                });
+
+
+            // await 必须在 async 修饰的函数中使用
+            // await 必须在async函数的上下文中
+
+            // const resp = await fetch(uri);
+            // const txt = await resp.text();
+            // content.innerHTML = txt;
+
+            // let json = await getJSON(uri);
+            // content.innerHTML = JSON.stringify(json);
+
+
+        }
+    </script>
+
+</body>
+
+</html>
